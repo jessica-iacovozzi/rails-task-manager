@@ -2,11 +2,7 @@
 
 <ul>
   <% @tasks.each do |task| %>
-    <% if task.completed == false %>
-      <li><i class="fa-regular fa-square"><%= link_to task.title, task_path(task) %></li>
-    <% elsif task.completed == true %>
-      <li><i class="fa-regular fa-square-check"><%= link_to task.title, task_path(task) %></li>
-    <% end %>
+    <li><%= task.completed ? "[X]" : "[ ]" %> <%= link_to task.title, task_path(task) %></li>
   <% end %>
 </ul>
 
